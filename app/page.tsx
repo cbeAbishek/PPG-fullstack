@@ -35,6 +35,7 @@ import AdmissionPopup from "@/components/admissionpop";
 import { AiChatbot } from "@/components/chatbot";
 import { TypingWords } from "@/components/typing-words";
 import CollegeNotification from "@/components/announcement-banner-old";
+import Preloader from "@/components/preloader";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -47,7 +48,10 @@ export default function Home() {
     "/assets/3.jpeg",
     "/assets/4.jpg",
   ];
-
+  const [isLoading, setIsLoading] = useState(true);
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
   const [bgIndex, setBgIndex] = useState(0);
   const [prevBgIndex, setPrevBgIndex] = useState(0);
   const [fade, setFade] = useState(true);
@@ -123,6 +127,10 @@ export default function Home() {
       if (typingTimeout.current) clearTimeout(typingTimeout.current);
     };
   }, [wordIndex]);
+  
+  if (isLoading) {
+    return <Preloader onLoadingComplete={handleLoadingComplete} />;
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
