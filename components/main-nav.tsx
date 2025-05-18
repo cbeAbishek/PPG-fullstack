@@ -25,6 +25,9 @@ import {
   PersonStanding,
   HelpCircle,
   MonitorSmartphone,
+  CalendarDays,
+  MessageSquareQuote,
+  HandHeart,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -106,6 +109,31 @@ const navItems = [
         title: "FAQs",
         href: "/admissions",
         icon: <HelpCircle className="h-4 w-4" />,
+      },
+    ],
+  },
+  {
+    title: "Alumni",
+    submenu: [
+      {
+        title: "Alumni Network",
+        href: "/alumni",
+        icon: <Users className="h-4 w-4" />,
+      },
+      {
+        title: "Events & Reunions",
+        href: "/alumni",
+        icon: <CalendarDays className="h-4 w-4" />,
+      },
+      {
+        title: "Alumni Stories",
+        href: "/alumni",
+        icon: <MessageSquareQuote className="h-4 w-4" />,
+      },
+      {
+        title: "Give Back",
+        href: "/alumni",
+        icon: <HandHeart className="h-4 w-4" />,
       },
     ],
   },
@@ -277,10 +305,10 @@ export function MainNav() {
 
           <div className="hidden md:block">
             <Link href="/admin">
-            <button className="flex items-center gap-2 rounded-full bg-[#ff914d] px-5 py-2 text-white font-semibold shadow-md hover:bg-[#ff7a26] transition duration-200">
-              Apply Now
-              <ArrowRight size={18} />
-            </button>
+              <button className="flex items-center gap-2 rounded-full bg-[#ff914d] px-5 py-2 text-white font-semibold shadow-md hover:bg-[#ff7a26] transition duration-200">
+                Apply Now
+                <ArrowRight size={18} />
+              </button>
             </Link>
           </div>
 
