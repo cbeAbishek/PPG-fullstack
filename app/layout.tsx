@@ -32,7 +32,6 @@ export const metadata: Metadata = {
       'https://raw.githubusercontent.com/cbeAbishek/PPG-fullstack/refs/heads/main/public/ppgmeta.jpg',
     ],
   },
-  themeColor: '#ff914d',
 }
 
 export default function RootLayout({

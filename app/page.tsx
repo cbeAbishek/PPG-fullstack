@@ -142,9 +142,9 @@ export default function Home() {
             <div className="relative h-10 w-10 overflow-hidden rounded-lg">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-60"></div>
             </div>
-            <span className="hidden bg-gradient-to-r from-[#ff4d4d] to-[#ff4d4d]/70 bg-clip-text font-bold text-transparent sm:inline-block">
+            {/* <span className="hidden bg-gradient-to-r from-[#ff4d4d] to-[#ff4d4d]/70 bg-clip-text font-bold text-transparent sm:inline-block">
               PPG Institute of Technology
-            </span>
+            </span> */}
           </Link>
           <MainNav />
         </div>

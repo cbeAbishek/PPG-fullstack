@@ -2,7 +2,7 @@ import '../globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'PPGIT | Incubation ',
+  title: 'PPGIT | Alumini ',
   description: 'Shaping the future through innovation, knowledge, and leadership',
   icons: {
     icon: '/logo.png',

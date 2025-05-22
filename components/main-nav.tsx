@@ -1,12 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, ReactElement } from "react";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import {
   Menu,
   ArrowRight,
+  LayoutGrid,
+  Rocket,
+  FilePlus,
+  UserCheck,
+  Archive,
   X,
   ChevronDown,
   GraduationCap,
@@ -31,7 +36,25 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = [
+// Define types for nav items
+type NavSubItem = {
+  title: string;
+  href: string;
+  icon: ReactElement;
+};
+
+type NavItem =
+  | {
+      title: string;
+      submenu: NavSubItem[];
+    }
+  | {
+      title: string;
+      href: string;
+      submenu?: undefined;
+    };
+
+const navItems: NavItem[] = [
   {
     title: "About",
     submenu: [
@@ -138,6 +161,41 @@ const navItems = [
     ],
   },
   {
+    title: "Incubation",
+    submenu: [
+      {
+        title: "Overview",
+        href: "/incubation",
+        icon: <LayoutGrid className="h-4 w-4" />,
+      },
+      {
+        title: "Startups",
+        href: "/incubation",
+        icon: <Rocket className="h-4 w-4" />,
+      },
+      {
+        title: "Apply for Incubation",
+        href: "/incubation",
+        icon: <FilePlus className="h-4 w-4" />,
+      },
+      {
+        title: "Mentors",
+        href: "/incubation",
+        icon: <UserCheck className="h-4 w-4" />,
+      },
+      {
+        title: "Events & Workshops",
+        href: "/incubation",
+        icon: <CalendarDays className="h-4 w-4" />,
+      },
+      {
+        title: "Resources",
+        href: "/incubation",
+        icon: <Archive className="h-4 w-4" />,
+      },
+    ],
+  },
+  {
     title: "Campus",
     submenu: [
       {
@@ -238,6 +296,7 @@ export function MainNav() {
             </div>
             <span className="hidden bg-gradient-to-r from-[#ff4d4d] to-[#ff4d4d]/70 bg-clip-text font-bold text-transparent sm:inline-block">
               PPG Institute of Technology
+              <p className="text-[12px] ">An Autonomous Institution</p>
             </span>
           </Link>
           {/* Desktop Navigation */}
