@@ -36,6 +36,7 @@ import { AiChatbot } from "@/components/chatbot";
 import { TypingWords } from "@/components/typing-words";
 import CollegeNotification from "@/components/announcement-banner-old";
 import Preloader from "@/components/preloader";
+import devtools from 'devtools-detect';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -127,10 +128,50 @@ export default function Home() {
       if (typingTimeout.current) clearTimeout(typingTimeout.current);
     };
   }, [wordIndex]);
-  
+
+  // inspect blocking methos implementation
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const disableContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+    window.addEventListener("contextmenu", disableContextMenu);
+    return () => {
+      window.removeEventListener("contextmenu", disableContextMenu);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey &&
+          e.shiftKey &&
+          (e.key === "I" || e.key === "J" || e.key === "C")) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   if (isLoading) {
     return <Preloader onLoadingComplete={handleLoadingComplete} />;
   }
+  useEffect(() => {
+  const checkDevTools = () => {
+    if (devtools.isOpen) {
+      window.close(); // or redirect or blank out screen
+    }
+  };
+  const interval = setInterval(checkDevTools, 1000);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -304,80 +345,80 @@ export default function Home() {
 
         {/* Departments Section */}
         <section id="/#dep">
-        <ParallaxSection className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-muted"></div>
-          <div className="container relative z-10">
-            <RevealOnScroll>
-              <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
-                Our Departments
-              </h2>
-              <div className="mt-2 h-1 w-20 bg-gradient-to-r from-[#ff914d] to-[#ff914d]/50 mx-auto rounded-full"></div>
-              <p className="mt-6 text-center text-lg text-muted-foreground">
-                Explore our diverse range of engineering departments offering
-                cutting-edge programs
-              </p>
-            </RevealOnScroll>
+          <ParallaxSection className="py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-muted"></div>
+            <div className="container relative z-10">
+              <RevealOnScroll>
+                <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
+                  Our Departments
+                </h2>
+                <div className="mt-2 h-1 w-20 bg-gradient-to-r from-[#ff914d] to-[#ff914d]/50 mx-auto rounded-full"></div>
+                <p className="mt-6 text-center text-lg text-muted-foreground">
+                  Explore our diverse range of engineering departments offering
+                  cutting-edge programs
+                </p>
+              </RevealOnScroll>
 
-            <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <RevealOnScroll delay={0.1}>
-                <DepartmentCard
-                  title="Computer Science Engineering"
-                  icon="Monitor"
-                  description="Focusing on software engineering, AI, and system design"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.2}>
-                <DepartmentCard
-                  title="Information Technology"
-                  icon="Server"
-                  description="Specializing in IT systems, data management, and networking"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.3}>
-                <DepartmentCard
-                  title="Artificial Intelligence & Data Science"
-                  icon="Brain"
-                  description="Integrating AI, data analytics, and intelligent systems"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.4}>
-                <DepartmentCard
-                  title="AI & Machine Learning"
-                  icon="Brain"
-                  description="Focusing on machine learning algorithms and applications"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.5}>
-                <DepartmentCard
-                  title="Mechanical Engineering"
-                  icon="Cog"
-                  description="Exploring mechanics, thermodynamics, and manufacturing"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.6}>
-                <DepartmentCard
-                  title="Bio-Medical Engineering"
-                  icon="Activity"
-                  description="Combining engineering principles with medical sciences"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.7}>
-                <DepartmentCard
-                  title="Electronics & Communication Engineering"
-                  icon="Cpu"
-                  description="Designing communication systems and embedded technologies"
-                />
-              </RevealOnScroll>
-              <RevealOnScroll delay={0.8}>
-                <DepartmentCard
-                  title="Agricultural Engineering"
-                  icon="Leaf"
-                  description="Improving agricultural processes through engineering innovation"
-                />
-              </RevealOnScroll>
+              <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <RevealOnScroll delay={0.1}>
+                  <DepartmentCard
+                    title="Computer Science Engineering"
+                    icon="Monitor"
+                    description="Focusing on software engineering, AI, and system design"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.2}>
+                  <DepartmentCard
+                    title="Information Technology"
+                    icon="Server"
+                    description="Specializing in IT systems, data management, and networking"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.3}>
+                  <DepartmentCard
+                    title="Artificial Intelligence & Data Science"
+                    icon="Brain"
+                    description="Integrating AI, data analytics, and intelligent systems"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.4}>
+                  <DepartmentCard
+                    title="AI & Machine Learning"
+                    icon="Brain"
+                    description="Focusing on machine learning algorithms and applications"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.5}>
+                  <DepartmentCard
+                    title="Mechanical Engineering"
+                    icon="Cog"
+                    description="Exploring mechanics, thermodynamics, and manufacturing"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.6}>
+                  <DepartmentCard
+                    title="Bio-Medical Engineering"
+                    icon="Activity"
+                    description="Combining engineering principles with medical sciences"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.7}>
+                  <DepartmentCard
+                    title="Electronics & Communication Engineering"
+                    icon="Cpu"
+                    description="Designing communication systems and embedded technologies"
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll delay={0.8}>
+                  <DepartmentCard
+                    title="Agricultural Engineering"
+                    icon="Leaf"
+                    description="Improving agricultural processes through engineering innovation"
+                  />
+                </RevealOnScroll>
+              </div>
             </div>
-          </div>
-        </ParallaxSection>
+          </ParallaxSection>
         </section>
 
         {/* Stats Section */}
