@@ -36,7 +36,7 @@ import { AiChatbot } from "@/components/chatbot";
 import { TypingWords } from "@/components/typing-words";
 import CollegeNotification from "@/components/announcement-banner-old";
 import Preloader from "@/components/preloader";
-import devtools from 'devtools-detect';
+import devtools from "devtools-detect";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -160,19 +160,19 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const checkDevTools = () => {
+      if (devtools.isOpen) {
+        window.close(); // or redirect or blank out screen
+      }
+    };
+    const interval = setInterval(checkDevTools, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   if (isLoading) {
     return <Preloader onLoadingComplete={handleLoadingComplete} />;
   }
-  useEffect(() => {
-  const checkDevTools = () => {
-    if (devtools.isOpen) {
-      window.close(); // or redirect or blank out screen
-    }
-  };
-  const interval = setInterval(checkDevTools, 1000);
-  return () => clearInterval(interval);
-}, []);
-
   return (
     <div className="flex min-h-screen flex-col">
       <AiChatbot />
