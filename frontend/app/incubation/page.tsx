@@ -73,28 +73,52 @@ const IncubationPage = () => {
 
   const mentors = [
     {
-      name: "Dr. Rajesh Kumar",
-      expertise: "Technology & Innovation",
-      company: "Former CTO, Tech Mahindra",
-      experience: "20+ years",
+      name: "Dr. S. Nandhakumar",
+      expertise: "Chief Mentor",
+      company: "Professor & Principal, PPGIT",
+      experience: "Leadership & Innovation",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop",
     },
     {
-      name: "Priya Sharma",
-      expertise: "Business Strategy",
-      company: "Founder, StartupBoost",
-      experience: "15+ years",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop",
-    },
-    {
-      name: "Arun Patel",
-      expertise: "Product Development",
-      company: "VP Product, Flipkart",
-      experience: "12+ years",
+      name: "Prof. T. B. Dharamaraj",
+      expertise: "Coordinator",
+      company: "Associate Professor & Head, IT",
+      experience: "Technology & Management",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+    },
+    {
+      name: "Dr. S. Balakrishnan",
+      expertise: "Co-coordinator",
+      company: "Associate Professor & Head, Mechanical Engg.",
+      experience: "Innovation & Development",
+      image:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop",
+    },
+    {
+      name: "Dr. Chinnarasu K",
+      expertise: "Tech Guru",
+      company: "Associate Professor, Agricultural Engg.",
+      experience: "Agricultural Technology",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop",
+    },
+    {
+      name: "Prof. Selvakumar C",
+      expertise: "Tech Guru",
+      company: "Assistant Professor, Agricultural Engg.",
+      experience: "AgriTech Innovation",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop",
+    },
+    {
+      name: "Prof. Karthika G",
+      expertise: "Tech Guru",
+      company: "Assistant Professor, ECE",
+      experience: "Electronics & Communication",
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop",
     },
   ];
 
@@ -265,11 +289,11 @@ const IncubationPage = () => {
   const MentorCard = ({ mentor }: { mentor: Mentor }) => (
     <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
       <div className="flex items-center mb-4">
-        <img
+        {/* <img
           src={mentor.image}
           alt={mentor.name}
           className="w-16 h-16 rounded-full object-cover mr-4"
-        />
+        /> */}
         <div>
           <h3 className="text-lg font-bold text-gray-800">{mentor.name}</h3>
           <p className="text-[#ff914d] font-medium">{mentor.expertise}</p>
@@ -375,15 +399,17 @@ const IncubationPage = () => {
               </IconOption>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              PPG Innovation Hub
+              AICTE IDEA Lab
               <span className="block text-3xl md:text-4xl font-light mt-2">
-                Engineering Excellence Incubator
+                PPG Institute of Technology
               </span>
             </h1>
+            <p className="text-lg md:text-xl mb-4 text-white/90 max-w-3xl mx-auto">
+              <em>Affiliated to Anna University | Approved by AICTE | ISO 9001:2015 Certified</em>
+            </p>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Transforming groundbreaking ideas into successful ventures through
-              comprehensive support, mentorship, and state-of-the-art
-              facilities.
+              Fostering experiential learning through hands-on projects, prototyping, and real-world problem-solving.
+              <span className="block mt-2 text-lg font-light">Igniting Minds, Building Futures</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-[#ff914d] px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
@@ -402,82 +428,59 @@ const IncubationPage = () => {
       <div className="max-w-7xl mx-auto px-4 -mt-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatCard
-            icon={Rocket}
-            value="150+"
-            label="Startups Incubated"
-            trend="+25%"
+            icon={Calendar}
+            value="Oct 22, 2025"
+            label="Inauguration Date"
           />
           <StatCard
             icon={DollarSign}
-            value="₹50Cr+"
-            label="Total Funding Raised"
-            trend="+40%"
+            value="₹90L"
+            label="Total Project Budget"
           />
           <StatCard
-            icon={Users}
-            value="200+"
-            label="Active Entrepreneurs"
-            trend="+15%"
+            icon={FileText}
+            value="IDEA2024000225"
+            label="AICTE Lab ID"
           />
-          <StatCard icon={Award} value="85%" label="Success Rate" trend="+5%" />
+          <StatCard icon={CheckCircle} value="Feb 2025" label="Accepted & Sanctioned" />
         </div>
       </div>
 
-      {/* Navigation Tabs */}
+      {/* Content Sections - All displayed vertically */}
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
-          <TabButton
-            id="overview"
-            label="Overview"
-            icon={Lightbulb}
-            isActive={activeTab === "overview"}
-          />
-          <TabButton
-            id="startups"
-            label="Startups"
-            icon={Rocket}
-            isActive={activeTab === "startups"}
-          />
-          <TabButton
-            id="apply"
-            label="Apply"
-            icon={FileText}
-            isActive={activeTab === "apply"}
-          />
-          <TabButton
-            id="mentors"
-            label="Mentors"
-            icon={Users}
-            isActive={activeTab === "mentors"}
-          />
-          <TabButton
-            id="events"
-            label="Events"
-            icon={Calendar}
-            isActive={activeTab === "events"}
-          />
-          <TabButton
-            id="resources"
-            label="Resources"
-            icon={BookOpen}
-            isActive={activeTab === "resources"}
-          />
-        </div>
-
-        {/* Tab Content */}
-        <div className="transition-all duration-500">
-          {activeTab === "overview" && (
-            <div className="space-y-12">
+        <div className="space-y-16">
+          {/* Overview Section */}
+          <div className="space-y-12">
               {/* Mission Section */}
-              <div className="text-center max-w-4xl mx-auto">
+              <div className="text-center max-w-5xl mx-auto">
                 <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                  Our Mission
+                  Vision & Mission
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  To foster innovation and entrepreneurship among engineering
-                  students and faculty by providing comprehensive support,
-                  world-class facilities, and access to industry expertise.
-                </p>
+                <div className="bg-gradient-to-r from-orange-50 to-white p-8 rounded-xl mb-6">
+                  <h3 className="text-2xl font-bold text-[#ff914d] mb-4">Vision</h3>
+                  <p className="text-lg text-gray-700 leading-relaxed italic">
+                    To cultivate innovation, creativity, and hands-on learning through STEM education, 
+                    producing competent, responsible, and industry-ready engineers for national development.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                    <h4 className="font-bold text-gray-800 mb-3">Mission 1</h4>
+                    <p className="text-gray-600">Establish a sustainable innovation ecosystem aligned with <strong>Make in India</strong> and <strong>Digital India</strong>.</p>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                    <h4 className="font-bold text-gray-800 mb-3">Mission 2</h4>
+                    <p className="text-gray-600">Strengthen academia–industry collaboration for technology development and entrepreneurship incubation.</p>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                    <h4 className="font-bold text-gray-800 mb-3">Mission 3</h4>
+                    <p className="text-gray-600">Promote experiential learning in critical thinking, problem-solving, and design thinking through project-based pedagogy.</p>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                    <h4 className="font-bold text-gray-800 mb-3">Mission 4</h4>
+                    <p className="text-gray-600">Provide a multidisciplinary platform to ideate, design, prototype, and validate solutions for societal challenges.</p>
+                  </div>
+                </div>
               </div>
 
               {/* Features Grid */}
@@ -485,39 +488,39 @@ const IncubationPage = () => {
                 {[
                   {
                     icon: Target,
-                    title: "Strategic Guidance",
+                    title: "Collaborative Workspace",
                     description:
-                      "Expert mentorship and strategic planning to help startups navigate challenges and scale effectively.",
+                      "Open, collaborative environment for transforming innovative ideas into functional prototypes and products.",
                   },
                   {
                     icon: Briefcase,
-                    title: "Funding Support",
+                    title: "Workshops & Training",
                     description:
-                      "Access to angel investors, VCs, and government grants to fuel your startup's growth journey.",
+                      "Programs on design thinking, rapid prototyping, IoT, AI, robotics, and smart manufacturing.",
                   },
                   {
                     icon: Globe,
-                    title: "Network Access",
+                    title: "24/7 Accessibility",
                     description:
-                      "Connect with alumni network, industry partners, and fellow entrepreneurs for collaboration.",
+                      "Round-the-clock access to encourage continuous innovation and experimentation.",
                   },
                   {
                     icon: BookOpen,
-                    title: "Learning Resources",
+                    title: "Advanced Equipment",
                     description:
-                      "Comprehensive library of startup resources, templates, and educational materials.",
+                      "3D Printers, CNC Laser Cutters, AI/IoT Kits, and high-performance workstations.",
                   },
                   {
                     icon: Award,
-                    title: "Recognition Programs",
+                    title: "Industry Collaboration",
                     description:
-                      "Showcase your achievements through our startup awards and recognition programs.",
+                      "Partnerships with local industries for resource sharing, mentorship, and real-world projects.",
                   },
                   {
                     icon: Rocket,
-                    title: "Launch Support",
+                    title: "Innovation Pipeline",
                     description:
-                      "End-to-end support from ideation to market launch with dedicated acceleration programs.",
+                      "Mentor student teams for competitions, patents, and startup ventures to build sustainable innovation.",
                   },
                 ].map((feature, index) => (
                   <div
@@ -540,43 +543,45 @@ const IncubationPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                      About Our Institution
+                      About PPG Institute of Technology
                     </h2>
                     <p className="text-gray-600 mb-4 leading-relaxed">
-                      Established in 1985, our engineering college has been at
-                      the forefront of technical education and innovation. With
-                      over 5,000 students across various engineering
-                      disciplines, we have consistently ranked among the top
-                      engineering institutions in the country.
+                      <strong>Established in 2008</strong>, PPG Institute of Technology (PPGIT) is affiliated to Anna University, Chennai, 
+                      and approved by AICTE, New Delhi. Accredited by NAAC with 'A' Grade and ISO 9001:2015 certified, 
+                      PPGIT offers 8 UG programs and 2 PG programs across various engineering disciplines.
                     </p>
                     <p className="text-gray-600 mb-6 leading-relaxed">
-                      Our incubation center, launched in 2018, has become a
-                      beacon of entrepreneurial excellence, supporting over 150
-                      startups and helping them raise more than ₹50 crores in
-                      funding.
+                      Our AICTE IDEA Lab, inaugurated on <strong>October 22, 2025</strong>, represents our commitment to fostering 
+                      innovation and entrepreneurship. The lab is led by the Department of Mechanical Engineering and supported 
+                      by a dedicated faculty team focused on STEM education and hands-on learning.
                     </p>
-                    <div className="flex items-center space-x-6">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-[#ff914d]">
-                          35+
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          Years of Excellence
-                        </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <div className="text-center bg-orange-50 p-4 rounded-lg">
+                        <div className="text-2xl font-bold text-[#ff914d]">2008</div>
+                        <div className="text-sm text-gray-600">Established</div>
                       </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-[#ff914d]">
-                          5000+
-                        </div>
-                        <div className="text-sm text-gray-600">Students</div>
+                      <div className="text-center bg-orange-50 p-4 rounded-lg">
+                        <div className="text-2xl font-bold text-[#ff914d]">10</div>
+                        <div className="text-sm text-gray-600">Programs Offered</div>
                       </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-[#ff914d]">
-                          300+
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          Faculty Members
-                        </div>
+                      <div className="text-center bg-orange-50 p-4 rounded-lg">
+                        <div className="text-2xl font-bold text-[#ff914d]">27</div>
+                        <div className="text-sm text-gray-600">University Ranks</div>
+                      </div>
+                      <div className="text-center bg-orange-50 p-4 rounded-lg">
+                        <div className="text-2xl font-bold text-[#ff914d]">A Grade</div>
+                        <div className="text-sm text-gray-600">NAAC Accredited</div>
+                      </div>
+                    </div>
+                    <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg">
+                      <h4 className="font-bold text-gray-800 mb-2">Key Achievements & Recognitions</h4>
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-600">
+                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />OBE Ranking</div>
+                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />Green Campus</div>
+                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />MSME Host</div>
+                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />National STEM Ranking</div>
+                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />SDG Accord Signatory</div>
+                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />Indian Book of Records</div>
                       </div>
                     </div>
                   </div>
@@ -591,10 +596,85 @@ const IncubationPage = () => {
                 </div>
               </div>
             </div>
-          )}
 
-          {activeTab === "startups" && (
-            <div className="space-y-8">
+          {/* Mentors Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Faculty Team
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Meet the dedicated faculty team driving innovation and guiding students in the AICTE IDEA Lab at PPGIT.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {mentors.map((mentor, index) => (
+                <MentorCard key={index} mentor={mentor} />
+              ))}
+            </div>
+
+            {/* Mentorship Program */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                Mentorship Program
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-4">
+                    What You Get:
+                  </h4>
+                  <ul className="space-y-3">
+                    {[
+                      "One-on-one sessions with industry experts",
+                      "Strategic business planning guidance",
+                      "Product development mentorship",
+                      "Funding and investment advice",
+                      "Market entry strategies",
+                      "Network introductions",
+                    ].map((benefit, index) => (
+                      <li key={index} className="flex items-center space-x-3">
+                        <Star
+                          className="text-[#ff914d] flex-shrink-0"
+                          size={16}
+                        />
+                        <span className="text-gray-700">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-4">
+                    Mentor Categories:
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      { category: "Technology", count: 25 },
+                      { category: "Business Strategy", count: 18 },
+                      { category: "Marketing & Sales", count: 15 },
+                      { category: "Finance & Legal", count: 12 },
+                      { category: "Product Design", count: 10 },
+                    ].map((cat, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between bg-gray-50 rounded-lg p-3"
+                      >
+                        <span className="font-medium text-gray-800">
+                          {cat.category}
+                        </span>
+                        <span className="text-[#ff914d] font-bold">
+                          {cat.count}+ Mentors
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Startups Section */}
+          <div className="space-y-8">
               <div className="text-center">
                 <h2 className="text-4xl font-bold text-gray-800 mb-4">
                   Our Success Stories
@@ -624,10 +704,9 @@ const IncubationPage = () => {
                 </button>
               </div>
             </div>
-          )}
 
-          {activeTab === "apply" && (
-            <div className="max-w-4xl mx-auto space-y-8">
+          {/* Apply Section */}
+          <div className="max-w-4xl mx-auto space-y-8">
               <div className="text-center">
                 <h2 className="text-4xl font-bold text-gray-800 mb-4">
                   Apply for Incubation
@@ -773,88 +852,11 @@ const IncubationPage = () => {
                 </button>
               </div>
             </div>
-          )}
 
-          {activeTab === "mentors" && (
-            <div className="space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  Expert Mentors
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Learn from industry veterans and successful entrepreneurs who
-                  guide our startups to success.
-                </p>
-              </div>
+          {/* Mentors Section (already shown above, this was duplicate - removing) */}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {mentors.map((mentor, index) => (
-                  <MentorCard key={index} mentor={mentor} />
-                ))}
-              </div>
-
-              {/* Mentorship Program */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Mentorship Program
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-800 mb-4">
-                      What You Get:
-                    </h4>
-                    <ul className="space-y-3">
-                      {[
-                        "One-on-one sessions with industry experts",
-                        "Strategic business planning guidance",
-                        "Product development mentorship",
-                        "Funding and investment advice",
-                        "Market entry strategies",
-                        "Network introductions",
-                      ].map((benefit, index) => (
-                        <li key={index} className="flex items-center space-x-3">
-                          <Star
-                            className="text-[#ff914d] flex-shrink-0"
-                            size={16}
-                          />
-                          <span className="text-gray-700">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-800 mb-4">
-                      Mentor Categories:
-                    </h4>
-                    <div className="space-y-3">
-                      {[
-                        { category: "Technology", count: 25 },
-                        { category: "Business Strategy", count: 18 },
-                        { category: "Marketing & Sales", count: 15 },
-                        { category: "Finance & Legal", count: 12 },
-                        { category: "Product Design", count: 10 },
-                      ].map((cat, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center justify-between bg-gray-50 rounded-lg p-3"
-                        >
-                          <span className="font-medium text-gray-800">
-                            {cat.category}
-                          </span>
-                          <span className="text-[#ff914d] font-bold">
-                            {cat.count}+ Mentors
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeTab === "events" && (
-            <div className="space-y-8">
+          {/* Events Section */}
+          <div className="space-y-8">
               <div className="text-center">
                 <h2 className="text-4xl font-bold text-gray-800 mb-4">
                   Events & Workshops
@@ -925,9 +927,9 @@ const IncubationPage = () => {
                 </div>
               </div>
             </div>
-          )}
-          {activeTab === "resources" && (
-            <div className="space-y-8">
+
+          {/* Resources Section */}
+          <div className="space-y-8">
               <div className="text-center">
                 <h2 className="text-4xl font-bold text-gray-800 mb-4">
                   Resources & Tools
@@ -1040,7 +1042,6 @@ const IncubationPage = () => {
                 </form>
               </div>
             </div>
-          )}
         </div>
       </div>
       {/* Contact Section */}
@@ -1049,11 +1050,11 @@ const IncubationPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Contact Our Incubation Center
+                Contact AICTE IDEA Lab
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Have questions about our incubation program? Want to schedule a
-                meeting with our team or mentors? Get in touch with us today.
+                Have questions about our IDEA Lab facilities and programs? Want to collaborate 
+                or schedule a visit? Get in touch with us today.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -1063,24 +1064,26 @@ const IncubationPage = () => {
                   <div>
                     <h4 className="font-bold text-gray-800">Address</h4>
                     <p className="text-gray-600">
-                      Engineering Excellence Incubation Hub
+                      PPG Institute of Technology
                       <br />
-                      123 Innovation Drive, Tech Park
+                      AICTE IDEA Lab, Department of Mechanical Engineering
                       <br />
-                      Mumbai, India - 400072
+                      Coimbatore, Tamil Nadu – 641 035
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-orange-100 rounded-lg">
-                    <Phone className="text-[#ff914d]" size={24} />
+                    <Users className="text-[#ff914d]" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800">Phone</h4>
+                    <h4 className="font-bold text-gray-800">Lab Coordinator</h4>
                     <p className="text-gray-600">
-                      +91 22 1234 5678
+                      Dr. S. Balakrishnan
                       <br />
-                      +91 22 8765 4321
+                      Associate Professor & Head, Mechanical Engineering
+                      <br />
+                      Faculty Co-coordinator, PPGIT IDEA Lab
                     </p>
                   </div>
                 </div>
@@ -1091,9 +1094,9 @@ const IncubationPage = () => {
                   <div>
                     <h4 className="font-bold text-gray-800">Email</h4>
                     <p className="text-gray-600">
-                      incubation@engineeringhub.edu
+                      idealab@ppgit.ac.in
                       <br />
-                      support@engineeringhub.edu
+                      info@ppgit.ac.in
                     </p>
                   </div>
                 </div>

@@ -13,7 +13,6 @@ import {
   Thermometer,
   Droplet,
   Layers,
-  GitBranch,
 } from "lucide-react";
 
 interface PreloaderProps {
@@ -23,7 +22,6 @@ interface PreloaderProps {
 const Preloader = ({ onLoadingComplete }: PreloaderProps) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [currentDept, setCurrentDept] = useState(0);
-  const [rotation, setRotation] = useState(0);
 
   const departments = [
     { name: "Computer Science", icon: Laptop, color: "orange" },
@@ -59,14 +57,6 @@ const Preloader = ({ onLoadingComplete }: PreloaderProps) => {
     return () => clearInterval(deptInterval);
   }, []);
 
-  // Rotation animation for gears
-  useEffect(() => {
-    const rotationInterval = setInterval(() => {
-      setRotation((prev) => (prev + 1) % 360);
-    }, 30);
-    return () => clearInterval(rotationInterval);
-  }, []);
-
   const CurrentDeptIcon = departments[currentDept].icon;
   const iconColor = `text-${departments[currentDept].color}-500`;
 
@@ -75,59 +65,26 @@ const Preloader = ({ onLoadingComplete }: PreloaderProps) => {
       <div className="text-center w-full max-w-md px-6">
         {/* Engineering college logo */}
         <div className="flex items-center justify-center mb-8">
-          <div className="relative">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-              <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 flex items-center justify-center relative overflow-hidden">
-                  {/* Animated patterns inside logo */}
-                  <div className="absolute inset-0">
-                    {[...Array(6)].map((_, i) => (
-                      <div
-                        key={`circuit-${i}`}
-                        className="absolute bg-white opacity-20"
-                        style={{
-                          height: "2px",
-                          width: `${Math.random() * 20 + 10}px`, // Add 'px'
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                          transform: `rotate(${Math.random() * 360}deg)`,
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Core elements */}
-                  <div
-                    className="relative"
-                    style={{ transform: `rotate(${rotation / 3}deg)` }}
-                  >
-                    <Cog
-                      size={24}
-                      className="absolute text-white opacity-80"
-                      style={{ top: -20, left: -6 }}
-                    />
-                    <Laptop size={28} className="text-white" />
-                    <GitBranch
-                      size={16}
-                      className="absolute text-white opacity-80"
-                      style={{ bottom: -16, right: -10 }}
-                    />
-                  </div>
-                </div>
-              </div>
+          <div className="relative w-40 h-40 flex items-center justify-center">
+            <div className="w-32 h-32 rounded-md bg-white shadow-lg flex items-center justify-center">
+              <img
+                src="/logo.png"
+                alt="PPG Institute logo"
+                className="max-w-full max-h-full object-contain"
+              />
             </div>
 
             {/* Orbiting elements */}
-            <div
+            {/* <div
               className="absolute top-0 left-0 w-full h-full animate-spin"
               style={{ animationDuration: "12s" }}
             >
               <div className="absolute" style={{ top: "0%", left: "50%" }}>
                 <Cpu size={16} className="text-orange-500" />
               </div>
-            </div>
+            </div> */}
 
-            <div
+            {/* <div
               className="absolute top-0 left-0 w-full h-full animate-spin"
               style={{
                 animationDuration: "15s",
@@ -167,7 +124,7 @@ const Preloader = ({ onLoadingComplete }: PreloaderProps) => {
               <div className="absolute" style={{ top: "20%", left: "10%" }}>
                 <Leaf size={16} className="text-green-500" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
