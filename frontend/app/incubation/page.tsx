@@ -120,20 +120,26 @@ const IncubationPage = () => {
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop",
     },
+    {
+      name: "Prof. Mohan Kumar J K",
+      expertise: "Tech Guru",
+      company: "Assistant Professor, ECE",
+      experience: "Electronics & Communication",
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop",
+    },
   ];
 
   const galleryImages = [
     "/Idea/opening.jpeg",
     "/Idea/inagural.jpeg",
-    "/Idea/eq-1.jpeg",
+    "/Idea/eq-9.jpeg",
     "/Idea/eq-2.jpeg",
     "/Idea/eq-3.jpeg",
     "/Idea/eq-4.jpeg",
     "/Idea/eq-5.jpeg",
     "/Idea/eq-6.jpeg",
     "/Idea/eq-7.jpeg",
-    "/Idea/eq-8.jpeg",
-    "/Idea/eq-9.jpeg",
   ];
 
   const studentAmbassadors = [
@@ -433,10 +439,7 @@ const IncubationPage = () => {
                 PPG Institute of Technology
               </span>
             </h1>
-            <p className="text-lg md:text-xl mb-4 text-white/90 max-w-3xl mx-auto">
-              Affiliated to Anna University | Approved by AICTE | ISO 9001:2015
-              Certified
-            </p>
+
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
               Fostering experiential learning through hands-on projects,
               prototyping, and real-world problem-solving.
@@ -448,7 +451,30 @@ const IncubationPage = () => {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </div>
-
+      <div className="max-w-7xl mx-auto px-4 -mt-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StatCard
+            icon={Calendar}
+            value="Dec - 2023"
+            label="Inauguration Date"
+          />
+          <StatCard
+            icon={DollarSign}
+            value="₹90L"
+            label="Total Project Budget"
+          />
+          <StatCard
+            icon={FileText}
+            value="IDEA2024000225"
+            label="AICTE Lab ID"
+          />
+          {/* <StatCard
+            icon={CheckCircle}
+            value="Feb 2025"
+            label="Accepted & Sanctioned"
+          /> */}
+        </div>
+      </div>
       {/* Content Sections - All displayed vertically */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="space-y-16">
@@ -704,7 +730,8 @@ const IncubationPage = () => {
                 IDEA Lab Gallery
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore our state-of-the-art facilities and witness innovation in action
+                Explore our state-of-the-art facilities and witness innovation
+                in action
               </p>
             </div>
 
@@ -736,7 +763,8 @@ const IncubationPage = () => {
                 Student Ambassadors
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Meet our dedicated student leaders driving innovation and collaboration
+                Meet our dedicated student leaders driving innovation and
+                collaboration
               </p>
             </div>
 
@@ -795,7 +823,7 @@ const IncubationPage = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                {/* <div className="flex items-start space-x-4">
                   <div className="p-3 bg-orange-100 rounded-lg">
                     <Users className="text-[#ff914d]" size={24} />
                   </div>
@@ -809,8 +837,8 @@ const IncubationPage = () => {
                       Faculty Co-coordinator, PPGIT IDEA Lab
                     </p>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
+                </div> */}
+                {/* <div className="flex items-start space-x-4">
                   <div className="p-3 bg-orange-100 rounded-lg">
                     <Mail className="text-[#ff914d]" size={24} />
                   </div>
@@ -822,7 +850,7 @@ const IncubationPage = () => {
                       info@ppgit.ac.in
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div>
