@@ -633,6 +633,47 @@ const IncubationPage = () => {
             </div>
           </div>
 
+          {/* Services Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Services Provided by IDEA Lab
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive support for innovation, from ideation to market launch
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Training", icon: BookOpen },
+                { name: "Seed Fund", icon: DollarSign },
+                { name: "Development", icon: Zap },
+                { name: "Mentoring", icon: Users },
+                { name: "Incubation", icon: Rocket },
+                { name: "Internship", icon: Briefcase },
+                { name: "Start-up", icon: Target },
+                { name: "Commercialization", icon: TrendingUp },
+                { name: "Consultancy", icon: Lightbulb },
+                { name: "Marketing", icon: Globe },
+                { name: "IPR", icon: Award },
+                { name: "Networking", icon: Users },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-1"
+                >
+                  <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-[#ff914d] to-[#ff7b2d] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="text-white" size={28} />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-800">
+                    {service.name}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Mentors Section */}
           <div className="space-y-8">
             <div className="text-center">
