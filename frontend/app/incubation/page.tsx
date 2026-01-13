@@ -534,25 +534,12 @@ const IncubationPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                    About PPG Institute of Technology
+                    About IDEA Lab
                   </h2>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    <strong>Established in 2008</strong>, PPG Institute of
-                    Technology (PPGIT) is affiliated to Anna University,
-                    Chennai, and approved by AICTE, New Delhi. Accredited by
-                    NAAC with 'A' Grade and ISO 9001:2015 certified, PPGIT
-                    offers 8 UG programs and 2 PG programs across various
-                    engineering disciplines.
-                  </p>
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    Our AICTE IDEA Lab, inaugurated on{" "}
-                    <strong>October 22, 2025</strong>, represents our commitment
-                    to fostering innovation and entrepreneurship. The lab is led
-                    by the Department of Mechanical Engineering and supported by
-                    a dedicated faculty team focused on STEM education and
-                    hands-on learning.
+                    PPGIT – AICTE IDEA Lab aims at providing opportunity for the students to apply Science, Technology Engineering and Mathematics (STEM) fundamentals to gain a deeper understanding of the subject matter through hands-on experiences, learning by doing and developing innovative solutions to societal problems.
                   </p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="text-center bg-orange-50 p-4 rounded-lg">
                       <div className="text-2xl font-bold text-[#ff914d]">
                         2008
@@ -583,7 +570,7 @@ const IncubationPage = () => {
                         NAAC Accredited
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg">
                     <h4 className="font-bold text-gray-800 mb-2">
                       Key Achievements & Recognitions
