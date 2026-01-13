@@ -122,6 +122,38 @@ const IncubationPage = () => {
     },
   ];
 
+  const galleryImages = [
+    "/Idea/opening.jpeg",
+    "/Idea/inagural.jpeg",
+    "/Idea/eq-1.jpeg",
+    "/Idea/eq-2.jpeg",
+    "/Idea/eq-3.jpeg",
+    "/Idea/eq-4.jpeg",
+    "/Idea/eq-5.jpeg",
+    "/Idea/eq-6.jpeg",
+    "/Idea/eq-7.jpeg",
+    "/Idea/eq-8.jpeg",
+    "/Idea/eq-9.jpeg",
+  ];
+
+  const studentAmbassadors = [
+    {
+      name: "Aparna",
+      year: "II Year",
+      department: "ECE",
+    },
+    {
+      name: "Subhaganthan",
+      year: "III Year",
+      department: "ECE",
+    },
+    {
+      name: "Rahul S G",
+      year: "II Year",
+      department: "MECH",
+    },
+  ];
+
   const events = [
     {
       title: "Startup Pitch Day",
@@ -367,11 +399,8 @@ const IncubationPage = () => {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20">
           <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <IconOption
-                title=""
-                description=""
-              >
+            {/* <div className="flex items-center justify-center mb-6">
+              <IconOption title="" description="">
                 <div className="relative">
                   <div
                     className="w-20 h-20 bg-gradient-to-br from-[#ff914d] via-[#ff7b2d] to-[#ff6b1d] flex items-center justify-center shadow-2xl shadow-white/90"
@@ -397,7 +426,7 @@ const IncubationPage = () => {
                   `}</style>
                 </div>
               </IconOption>
-            </div>
+            </div> */}
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               AICTE IDEA Lab
               <span className="block text-3xl md:text-4xl font-light mt-2">
@@ -405,45 +434,19 @@ const IncubationPage = () => {
               </span>
             </h1>
             <p className="text-lg md:text-xl mb-4 text-white/90 max-w-3xl mx-auto">
-              <em>Affiliated to Anna University | Approved by AICTE | ISO 9001:2015 Certified</em>
+              Affiliated to Anna University | Approved by AICTE | ISO 9001:2015
+              Certified
             </p>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Fostering experiential learning through hands-on projects, prototyping, and real-world problem-solving.
-              <span className="block mt-2 text-lg font-light">Igniting Minds, Building Futures</span>
+              Fostering experiential learning through hands-on projects,
+              prototyping, and real-world problem-solving.
+              <span className="block mt-2 text-lg font-light">
+                Igniting Minds, Building Futures
+              </span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#ff914d] px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                Start Your Journey
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#ff914d] transition-all duration-300">
-                Watch Demo
-              </button>
-            </div>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="max-w-7xl mx-auto px-4 -mt-10 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <StatCard
-            icon={Calendar}
-            value="Oct 22, 2025"
-            label="Inauguration Date"
-          />
-          <StatCard
-            icon={DollarSign}
-            value="₹90L"
-            label="Total Project Budget"
-          />
-          <StatCard
-            icon={FileText}
-            value="IDEA2024000225"
-            label="AICTE Lab ID"
-          />
-          <StatCard icon={CheckCircle} value="Feb 2025" label="Accepted & Sanctioned" />
-        </div>
       </div>
 
       {/* Content Sections - All displayed vertically */}
@@ -451,151 +454,171 @@ const IncubationPage = () => {
         <div className="space-y-16">
           {/* Overview Section */}
           <div className="space-y-12">
-              {/* Mission Section */}
-              <div className="text-center max-w-5xl mx-auto">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                  Vision & Mission
-                </h2>
-                <div className="bg-gradient-to-r from-orange-50 to-white p-8 rounded-xl mb-6">
-                  <h3 className="text-2xl font-bold text-[#ff914d] mb-4">Vision</h3>
-                  <p className="text-lg text-gray-700 leading-relaxed italic">
-                    To cultivate innovation, creativity, and hands-on learning through STEM education, 
-                    producing competent, responsible, and industry-ready engineers for national development.
+            {/* Mission Section */}
+            <div className="text-center max-w-5xl mx-auto">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                Vision & Mission
+              </h2>
+              <div className="bg-gradient-to-r from-orange-50 to-white p-8 rounded-xl mb-6">
+                <h3 className="text-2xl font-bold text-[#ff914d] mb-4">
+                  Vision
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed italic">
+                  To cultivate innovation, creativity, and hands-on learning
+                  through STEM education, producing competent, responsible, and
+                  industry-ready engineers for national development.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                  <h4 className="font-bold text-gray-800 mb-3">Mission 1</h4>
+                  <p className="text-gray-600">
+                    Establish a sustainable innovation ecosystem aligned with{" "}
+                    <strong>Make in India</strong> and{" "}
+                    <strong>Digital India</strong>.
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
-                    <h4 className="font-bold text-gray-800 mb-3">Mission 1</h4>
-                    <p className="text-gray-600">Establish a sustainable innovation ecosystem aligned with <strong>Make in India</strong> and <strong>Digital India</strong>.</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
-                    <h4 className="font-bold text-gray-800 mb-3">Mission 2</h4>
-                    <p className="text-gray-600">Strengthen academia–industry collaboration for technology development and entrepreneurship incubation.</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
-                    <h4 className="font-bold text-gray-800 mb-3">Mission 3</h4>
-                    <p className="text-gray-600">Promote experiential learning in critical thinking, problem-solving, and design thinking through project-based pedagogy.</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
-                    <h4 className="font-bold text-gray-800 mb-3">Mission 4</h4>
-                    <p className="text-gray-600">Provide a multidisciplinary platform to ideate, design, prototype, and validate solutions for societal challenges.</p>
-                  </div>
+                <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                  <h4 className="font-bold text-gray-800 mb-3">Mission 2</h4>
+                  <p className="text-gray-600">
+                    Strengthen academia–industry collaboration for technology
+                    development and entrepreneurship incubation.
+                  </p>
                 </div>
-              </div>
-
-              {/* Features Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  {
-                    icon: Target,
-                    title: "Collaborative Workspace",
-                    description:
-                      "Open, collaborative environment for transforming innovative ideas into functional prototypes and products.",
-                  },
-                  {
-                    icon: Briefcase,
-                    title: "Workshops & Training",
-                    description:
-                      "Programs on design thinking, rapid prototyping, IoT, AI, robotics, and smart manufacturing.",
-                  },
-                  {
-                    icon: Globe,
-                    title: "24/7 Accessibility",
-                    description:
-                      "Round-the-clock access to encourage continuous innovation and experimentation.",
-                  },
-                  {
-                    icon: BookOpen,
-                    title: "Advanced Equipment",
-                    description:
-                      "3D Printers, CNC Laser Cutters, AI/IoT Kits, and high-performance workstations.",
-                  },
-                  {
-                    icon: Award,
-                    title: "Industry Collaboration",
-                    description:
-                      "Partnerships with local industries for resource sharing, mentorship, and real-world projects.",
-                  },
-                  {
-                    icon: Rocket,
-                    title: "Innovation Pipeline",
-                    description:
-                      "Mentor student teams for competitions, patents, and startup ventures to build sustainable innovation.",
-                  },
-                ].map((feature, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="p-3 bg-gradient-to-br from-[#ff914d] to-[#ff7b2d] rounded-lg w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="text-white" size={24} />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* About College Section */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                      About PPG Institute of Technology
-                    </h2>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      <strong>Established in 2008</strong>, PPG Institute of Technology (PPGIT) is affiliated to Anna University, Chennai, 
-                      and approved by AICTE, New Delhi. Accredited by NAAC with 'A' Grade and ISO 9001:2015 certified, 
-                      PPGIT offers 8 UG programs and 2 PG programs across various engineering disciplines.
-                    </p>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      Our AICTE IDEA Lab, inaugurated on <strong>October 22, 2025</strong>, represents our commitment to fostering 
-                      innovation and entrepreneurship. The lab is led by the Department of Mechanical Engineering and supported 
-                      by a dedicated faculty team focused on STEM education and hands-on learning.
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="text-center bg-orange-50 p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-[#ff914d]">2008</div>
-                        <div className="text-sm text-gray-600">Established</div>
-                      </div>
-                      <div className="text-center bg-orange-50 p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-[#ff914d]">10</div>
-                        <div className="text-sm text-gray-600">Programs Offered</div>
-                      </div>
-                      <div className="text-center bg-orange-50 p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-[#ff914d]">27</div>
-                        <div className="text-sm text-gray-600">University Ranks</div>
-                      </div>
-                      <div className="text-center bg-orange-50 p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-[#ff914d]">A Grade</div>
-                        <div className="text-sm text-gray-600">NAAC Accredited</div>
-                      </div>
-                    </div>
-                    <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg">
-                      <h4 className="font-bold text-gray-800 mb-2">Key Achievements & Recognitions</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-600">
-                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />OBE Ranking</div>
-                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />Green Campus</div>
-                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />MSME Host</div>
-                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />National STEM Ranking</div>
-                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />SDG Accord Signatory</div>
-                        <div className="flex items-center"><CheckCircle size={14} className="text-green-500 mr-2" />Indian Book of Records</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <img
-                      src="/ourstory.webp"
-                      alt="College Campus"
-                      className="w-full h-80 object-cover rounded-xl shadow-lg"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#ff914d]/20 to-transparent rounded-xl"></div>
-                  </div>
+                <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                  <h4 className="font-bold text-gray-800 mb-3">Mission 3</h4>
+                  <p className="text-gray-600">
+                    Promote experiential learning in critical thinking,
+                    problem-solving, and design thinking through project-based
+                    pedagogy.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#ff914d]">
+                  <h4 className="font-bold text-gray-800 mb-3">Mission 4</h4>
+                  <p className="text-gray-600">
+                    Provide a multidisciplinary platform to ideate, design,
+                    prototype, and validate solutions for societal challenges.
+                  </p>
                 </div>
               </div>
             </div>
+
+            {/* About College Section */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                    About PPG Institute of Technology
+                  </h2>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    <strong>Established in 2008</strong>, PPG Institute of
+                    Technology (PPGIT) is affiliated to Anna University,
+                    Chennai, and approved by AICTE, New Delhi. Accredited by
+                    NAAC with 'A' Grade and ISO 9001:2015 certified, PPGIT
+                    offers 8 UG programs and 2 PG programs across various
+                    engineering disciplines.
+                  </p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Our AICTE IDEA Lab, inaugurated on{" "}
+                    <strong>October 22, 2025</strong>, represents our commitment
+                    to fostering innovation and entrepreneurship. The lab is led
+                    by the Department of Mechanical Engineering and supported by
+                    a dedicated faculty team focused on STEM education and
+                    hands-on learning.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center bg-orange-50 p-4 rounded-lg">
+                      <div className="text-2xl font-bold text-[#ff914d]">
+                        2008
+                      </div>
+                      <div className="text-sm text-gray-600">Established</div>
+                    </div>
+                    <div className="text-center bg-orange-50 p-4 rounded-lg">
+                      <div className="text-2xl font-bold text-[#ff914d]">
+                        10
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Programs Offered
+                      </div>
+                    </div>
+                    <div className="text-center bg-orange-50 p-4 rounded-lg">
+                      <div className="text-2xl font-bold text-[#ff914d]">
+                        27
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        University Ranks
+                      </div>
+                    </div>
+                    <div className="text-center bg-orange-50 p-4 rounded-lg">
+                      <div className="text-2xl font-bold text-[#ff914d]">
+                        A Grade
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        NAAC Accredited
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg">
+                    <h4 className="font-bold text-gray-800 mb-2">
+                      Key Achievements & Recognitions
+                    </h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-600">
+                      <div className="flex items-center">
+                        <CheckCircle
+                          size={14}
+                          className="text-green-500 mr-2"
+                        />
+                        OBE Ranking
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle
+                          size={14}
+                          className="text-green-500 mr-2"
+                        />
+                        Green Campus
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle
+                          size={14}
+                          className="text-green-500 mr-2"
+                        />
+                        MSME Host
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle
+                          size={14}
+                          className="text-green-500 mr-2"
+                        />
+                        National STEM Ranking
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle
+                          size={14}
+                          className="text-green-500 mr-2"
+                        />
+                        SDG Accord Signatory
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle
+                          size={14}
+                          className="text-green-500 mr-2"
+                        />
+                        Indian Book of Records
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <img
+                    src="/ourstory.webp"
+                    alt="College Campus"
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#ff914d]/20 to-transparent rounded-xl"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Mentors Section */}
           <div className="space-y-8">
@@ -604,7 +627,8 @@ const IncubationPage = () => {
                 Faculty Team
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Meet the dedicated faculty team driving innovation and guiding students in the AICTE IDEA Lab at PPGIT.
+                Meet the dedicated faculty team driving innovation and guiding
+                students in the AICTE IDEA Lab at PPGIT.
               </p>
             </div>
 
@@ -615,7 +639,7 @@ const IncubationPage = () => {
             </div>
 
             {/* Mentorship Program */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+            {/* <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
                 Mentorship Program
               </h3>
@@ -670,378 +694,77 @@ const IncubationPage = () => {
                   </div>
                 </div>
               </div>
+            </div> */}
+          </div>
+
+          {/* Gallery Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                IDEA Lab Gallery
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Explore our state-of-the-art facilities and witness innovation in action
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                >
+                  <img
+                    src={image}
+                    alt={`IDEA Lab ${index + 1}`}
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="text-sm font-medium">IDEA Lab Facility</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Startups Section */}
+          {/* Student Ambassadors Section */}
           <div className="space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  Our Success Stories
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Meet the innovative startups that have grown from ideas to
-                  successful businesses in our incubator.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {startups.map((startup) => (
-                  <StartupCard key={startup.id} startup={startup} />
-                ))}
-              </div>
-
-              <div className="bg-gradient-to-r from-[#ff914d] to-[#ff7b2d] rounded-2xl p-8 text-white text-center">
-                <h3 className="text-2xl font-bold mb-4">
-                  Ready to Join Our Success Stories?
-                </h3>
-                <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-                  Transform your innovative idea into a thriving business with
-                  our comprehensive incubation program.
-                </p>
-                <button className="bg-white text-[#ff914d] px-8 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300">
-                  Apply Now
-                </button>
-              </div>
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Student Ambassadors
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Meet our dedicated student leaders driving innovation and collaboration
+              </p>
             </div>
 
-          {/* Apply Section */}
-          <div className="max-w-4xl mx-auto space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  Apply for Incubation
-                </h2>
-                <p className="text-xl text-gray-600">
-                  Ready to turn your idea into reality? Join our incubation
-                  program and get comprehensive support.
-                </p>
-              </div>
-
-              {/* Application Process */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Application Process
-                </h3>
-                <div className="space-y-6">
-                  {[
-                    {
-                      step: 1,
-                      title: "Submit Application",
-                      description:
-                        "Complete our online application form with your startup details and business plan.",
-                    },
-                    {
-                      step: 2,
-                      title: "Initial Review",
-                      description:
-                        "Our expert panel reviews your application and provides initial feedback within 7 days.",
-                    },
-                    {
-                      step: 3,
-                      title: "Pitch Presentation",
-                      description:
-                        "Selected candidates present their ideas to our selection committee.",
-                    },
-                    {
-                      step: 4,
-                      title: "Final Selection",
-                      description:
-                        "Successful startups are welcomed into our 6-month incubation program.",
-                    },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#ff914d] to-[#ff7b2d] rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        {item.step}
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-800 mb-1">
-                          {item.title}
-                        </h4>
-                        <p className="text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Eligibility Criteria */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Eligibility Criteria
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    "Current students or recent graduates (within 2 years)",
-                    "Innovative and scalable business idea",
-                    "Commitment to full-time participation",
-                    "Technology-focused or engineering solution",
-                    "Team of 2-5 members recommended",
-                    "Willingness to relocate to incubation facility",
-                  ].map((criteria, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle
-                        className="text-green-500 flex-shrink-0"
-                        size={20}
-                      />
-                      <span className="text-gray-700">{criteria}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Application Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Quick Application Form
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Startup Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Industry
-                    </label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent">
-                      <option>Select Industry</option>
-                      <option>FinTech</option>
-                      <option>HealthTech</option>
-                      <option>EdTech</option>
-                      <option>AI/ML</option>
-                      <option>IoT</option>
-                      <option>CleanTech</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Founder Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent"
-                    />
-                  </div>
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Brief Description
-                    </label>
-                    <textarea
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent"
-                      placeholder="Describe your startup idea in a few sentences..."
-                    ></textarea>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {studentAmbassadors.map((ambassador, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 text-center"
+                >
+                  {/* <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[#ff914d] to-[#ff7b2d] rounded-full flex items-center justify-center">
+                    <Users className="text-white" size={40} />
+                  </div> */}
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    {ambassador.name}
+                  </h3>
+                  <p className="text-[#ff914d] font-medium mb-1">
+                    {ambassador.year}
+                  </p>
+                  <p className="text-gray-600">
+                    Department of {ambassador.department}
+                  </p>
+                  <div className="mt-4 px-4 py-2 bg-orange-50 rounded-full text-[#ff914d] text-sm font-medium inline-block">
+                    Student Ambassador
                   </div>
                 </div>
-                <button className="mt-6 w-full bg-gradient-to-r from-[#ff914d] to-[#ff7b2d] text-white py-4 px-6 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300">
-                  Submit Application
-                </button>
-              </div>
+              ))}
             </div>
-
-          {/* Mentors Section (already shown above, this was duplicate - removing) */}
-
-          {/* Events Section */}
-          <div className="space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  Events & Workshops
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Join our upcoming events and workshops designed to empower
-                  startups with knowledge, networking opportunities, and
-                  practical skills.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {events.map((event, index) => (
-                  <EventCard key={index} event={event} />
-                ))}
-              </div>
-              {/* Event Categories */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Event Categories
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    {
-                      category: "Startup Pitching",
-                      description:
-                        "Learn how to effectively present your startup to investors and stakeholders.",
-                      count: 5,
-                    },
-                    {
-                      category: "Technology Workshops",
-                      description:
-                        "Hands-on sessions covering the latest technologies relevant to startups.",
-                      count: 8,
-                    },
-                    {
-                      category: "Business Strategy",
-                      description:
-                        "Workshops focused on business planning, scaling, and market entry strategies.",
-                      count: 6,
-                    },
-                    {
-                      category: "Funding & Investment",
-                      description:
-                        "Educational sessions on fundraising, investor relations, and financial planning.",
-                      count: 4,
-                    },
-                  ].map((cat, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start space-x-4 p-4 border border-gray-200 rounded-lg hover:border-[#ff914d] transition-colors duration-300"
-                    >
-                      <div className="p-3 bg-gradient-to-br from-[#ff914d] to-[#ff7b2d] rounded-lg flex-shrink-0">
-                        <Target className="text-white" size={20} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-800">
-                          {cat.category}
-                        </h4>
-                        <p className="text-gray-600 text-sm mt-1">
-                          {cat.description}
-                        </p>
-                        <span className="inline-block mt-2 px-3 py-1 bg-orange-50 text-[#ff914d] text-sm font-medium rounded-full">
-                          {cat.count} Events
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-          {/* Resources Section */}
-          <div className="space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  Resources & Tools
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Access a wide range of resources and tools to support your
-                  startup journey at every stage.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {resources.map((resourceGroup, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-                  >
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">
-                      {resourceGroup.category}
-                    </h3>
-                    <ul className="space-y-3">
-                      {resourceGroup.items.map((item, idx) => (
-                        <li key={idx} className="flex items-center space-x-2">
-                          <CheckCircle
-                            className="text-green-500 flex-shrink-0"
-                            size={16}
-                          />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-              {/* Featured Resources */}
-              <div className="bg-gradient-to-r from-[#ff914d] to-[#ff7b2d] rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Featured Resources</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    {
-                      title: "Startup Toolkit",
-                      description:
-                        "Essential templates, checklists, and guides for launching your startup.",
-                      linkText: "Download Now",
-                    },
-                    {
-                      title: "Investor Pitch Guide",
-                      description:
-                        "Step-by-step guide to creating a compelling pitch deck and presentation.",
-                      linkText: "Access Guide",
-                    },
-                    {
-                      title: "Tech Development Kit",
-                      description:
-                        "Free software tools, API access, and development resources for startups.",
-                      linkText: "Get Started",
-                    },
-                  ].map((resource, index) => (
-                    <div
-                      key={index}
-                      className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
-                    >
-                      <h4 className="font-bold text-lg mb-2 text-white">
-                        {resource.title}
-                      </h4>
-                      <p className="text-white/90 mb-4 text-sm">
-                        {resource.description}
-                      </p>
-                      <button className="mt-2 text-white font-medium inline-flex items-center">
-                        {resource.linkText}
-                        <ChevronRight size={16} className="ml-1" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Resource Request Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Request Specific Resources
-                </h3>
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Resource Type
-                    </label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent">
-                      <option>Select Resource Type</option>
-                      <option>Legal Templates</option>
-                      <option>Financial Tools</option>
-                      <option>Marketing Assets</option>
-                      <option>Tech Infrastructure</option>
-                      <option>Mentorship</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Requirement
-                    </label>
-                    <textarea
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff914d] focus:border-transparent"
-                      placeholder="Describe the specific resources you need..."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-[#ff914d] to-[#ff7b2d] text-white py-3 px-6 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300"
-                  >
-                    Submit Request
-                  </button>
-                </form>
-              </div>
-            </div>
+          </div>
         </div>
       </div>
       {/* Contact Section */}
@@ -1053,8 +776,8 @@ const IncubationPage = () => {
                 Contact AICTE IDEA Lab
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Have questions about our IDEA Lab facilities and programs? Want to collaborate 
-                or schedule a visit? Get in touch with us today.
+                Have questions about our IDEA Lab facilities and programs? Want
+                to collaborate or schedule a visit? Get in touch with us today.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
