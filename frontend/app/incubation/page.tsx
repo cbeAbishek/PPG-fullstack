@@ -333,9 +333,9 @@ const IncubationPage = () => {
       </div>
       <p className="text-gray-600 mb-2">{mentor.company}</p>
       <p className="text-sm text-gray-500">{mentor.experience} experience</p>
-      <button className="mt-4 w-full bg-gradient-to-r from-[#ff914d] to-[#ff7b2d] text-white py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
+      {/* <button className="mt-4 w-full bg-gradient-to-r from-[#ff914d] to-[#ff7b2d] text-white py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
         Connect
-      </button>
+      </button> */}
     </div>
   );
 
